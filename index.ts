@@ -12,3 +12,9 @@ let multiType: string | number; // string | number (satu variabel dengan multi t
 
 multiType = 123;
 multiType = 'hello';
+
+// Type alias
+type customType = string | number;
+let myType: customType;
+
+myType = 'hello';
