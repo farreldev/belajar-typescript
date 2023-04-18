@@ -22,7 +22,7 @@ console.log('type g:', typeof g);
 let h: null;
 h = null;
 console.log('type h:', typeof h);
-let i: {};
+let i: Record<string, unknown>;
 i = {};
 console.log('type i:', typeof i);
 let j: [];
