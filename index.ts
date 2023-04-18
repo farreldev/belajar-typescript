@@ -6,3 +6,8 @@ let arg1 = 4;
 let arg2 = 5;
 let result = sum(arg1, arg2);
 console.log(result);
+
+let multiType: string | number; // string | number (satu variabel dengan multi type data)
+
+multiType = 123;
+multiType = 'hello';
