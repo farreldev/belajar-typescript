@@ -18,4 +18,12 @@ list2 = ['a', 'b', 'c'];
 
  // Array with union
  // Type inference
- let list3 = ['Hello',1,2,3,4]
+ let list3_1 = ['Hello',1,2,3,4]
+
+ // Square bracket
+ let list3_2: (string|number)[];
+ list3_2 = ['Hello',1,2,3];
+
+ // generic array
+let list3_3:Array<string|number>;
+list3_3 = ['Hello',1,2,3];
