@@ -15,3 +15,7 @@ list1_3 = [1, 2, 3, 4];
 // Generic
 let list2: Array<string>;
 list2 = ['a', 'b', 'c'];
+
+ // Array with union
+ // Type inference
+ let list3 = ['Hello',1,2,3,4]
