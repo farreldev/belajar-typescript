@@ -12,6 +12,7 @@ let list1_3: Array<number>;
 list1_3 = [1, 2, 3, 4];
 
 // Array of string
+
 // Generic
 let list2: Array<string>;
 list2 = ['a', 'b', 'c'];
