@@ -1,5 +1,7 @@
 // Array of number
 
+import { NoSubstitutionTemplateLiteral } from "typescript/lib/tsserverlibrary";
+
 // Type inference
 let list1 = [1, 2, 3, 4];
 
@@ -28,3 +30,7 @@ list2 = ['a', 'b', 'c'];
  // generic array
 let list3_3:Array<string|number>;
 list3_3 = ['Hello',1,2,3];
+
+// Tuple
+let list4:[string,number,number,number];
+list4 = ['hello',1,2,3]
