@@ -20,3 +20,14 @@ product1 = {
   price: 2000,
   note: ''
 }
+
+// interface
+interface Product {
+  id: string,
+  productName: string,
+  price: number,
+  note: string
+}
+
+let product2: Product;
+let product3: Product;
