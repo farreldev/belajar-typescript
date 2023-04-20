@@ -31,3 +31,18 @@ interface Product {
 
 let product2: Product;
 let product3: Product;
+
+// Nested object
+interface Item {
+  id: string,
+  productName: string,
+  price: number,
+  productDetail: itemDetail
+}
+
+interface itemDetail {
+  year: number,
+  storage: number
+}
+
+let product4: Item;
