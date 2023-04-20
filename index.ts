@@ -107,3 +107,16 @@ let buy: Cart = {
     }
   }
 }
+
+// Destructuring
+let fullName = {
+  firstName: 'Ricky Alexander',
+  lastName: 'Titaley'
+}
+
+// type inference
+// let { firstName, lastName} = fullName;
+
+// inline interface
+
+let { firstName, lastName } : { firstName: string, lastName: string } = fullName;
