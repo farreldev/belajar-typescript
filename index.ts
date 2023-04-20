@@ -46,3 +46,31 @@ interface itemDetail {
 }
 
 let product4: Item;
+
+// Nested array of object
+interface Address {
+  street: string,
+  city: string
+}
+
+interface User {
+  id: string,
+  name: string,
+  address: Array<Address>
+}
+
+let user: User;
+user = {
+  id: 'U-1',
+  name: 'John',
+  address: [
+    {
+      street: 'Jalan Buntu',
+      city: 'Jakarta'
+    },
+    {
+      street: ' Jalan jalan',
+      city: 'Bandung'
+    }
+  ]
+}
