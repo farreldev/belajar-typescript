@@ -74,3 +74,36 @@ user = {
     }
   ]
 }
+
+// nested object of object
+
+interface cartItem {
+  id: string,
+  name: string,
+  qty: number
+}
+
+interface Cart {
+  idCart: string,
+  dateOrder: Date,
+  items: {
+    [key: string]: cartItem
+  }
+}
+
+let buy: Cart = {
+  idCart: 'C1',
+  dateOrder: new Date('2023-04-21'),
+  items: {
+    p1: {
+      id: 'p-1',
+      name: 'Mechanical Keyboard',
+      qty: 1
+    },
+    p2: {
+      id: 'p-2',
+      name: 'USB-Hub',
+      qty: 1
+    }
+  }
+}
