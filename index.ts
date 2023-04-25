@@ -23,3 +23,28 @@ function request(url: string, cb: readUrl) {
 let fn = (str: string) => console.log(str);
 
 request('https://www.youtube.com', fn);
+
+type Contact = {
+  firstName: string;
+  lastName: string;
+  gender?: string;
+  language: string;
+};
+
+function submitContact(
+  firstName: string,
+  lastName: string,
+  language = 'english',
+  gender?: string
+): Contact {
+  return {
+    firstName,
+    lastName,
+    language,
+    ...(gender && { gender }),
+  };
+}
+
+let res = submitContact('John', 'Mayer', 'english', 'Male');
+
+console.log(res);
