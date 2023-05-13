@@ -1,3 +1,8 @@
+/******* Basic Function *******/
+/**
+ * 3 Tipe Function is: Declaration, Expression, Arrow
+ */
+
 // function declaration
 
 function add(x: number, y: number): number {
