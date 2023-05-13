@@ -23,10 +23,10 @@ product1 = {
 
 // interface
 interface Product {
-  id: string,
-  productName: string,
-  price: number,
-  note: string
+  id: string;
+  productName: string;
+  price: number;
+  note: string;
 }
 
 let product2: Product;
@@ -34,29 +34,29 @@ let product3: Product;
 
 // Nested object
 interface Item {
-  id: string,
-  productName: string,
-  price: number,
-  productDetail: itemDetail
+  id: string;
+  productName: string;
+  price: number;
+  productDetail: itemDetail;
 }
 
 interface itemDetail {
-  year: number,
-  storage: number
+  year: number;
+  storage: number;
 }
 
 let product4: Item;
 
 // Nested array of object
 interface Address {
-  street: string,
-  city: string
+  street: string;
+  city: string;
 }
 
 interface User {
-  id: string,
-  name: string,
-  address: Array<Address>
+  id: string;
+  name: string;
+  address: Array<Address>;
 }
 
 let user: User;
