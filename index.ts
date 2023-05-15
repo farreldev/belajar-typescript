@@ -1,20 +1,55 @@
-function sum(a: number = 0, b: number = 0): number {
-  return a + b;
+/******* Basic Function *******/
+/**
+ * 3 Tipe Function is: Declaration, Expression, Arrow
+ */
+
+// function declaration
+
+function add(x: number, y: number): number {
+  return x + y;
 }
 
-let arg1 = 4;
-let arg2 = 5;
-let result = sum(arg1, arg2);
-console.log(result);
+console.log(add(2, 4));
 
-// Type Union
-let multiType: string | number; // string | number (satu variabel dengan multi type data)
+// function expression
 
-multiType = 123;
-multiType = 'hello';
+const addEx = (a: number, b: number): number => a + b;
 
-// Type alias
-type customType = string | number;
-let myType: customType;
+console.log(addEx(2, 1));
 
-myType = 'hello';
+// function with callback
+
+type readUrl = (message: string) => void;
+
+function request(url: string, cb: readUrl) {
+  cb(url);
+}
+
+let fn = (str: string) => console.log(str);
+
+request('https://www.youtube.com', fn);
+
+type Contact = {
+  firstName: string;
+  lastName: string;
+  gender?: string;
+  language: string;
+};
+
+function submitContact(
+  firstName: string,
+  lastName: string,
+  language = 'english',
+  gender?: string
+): Contact {
+  return {
+    firstName,
+    lastName,
+    language,
+    ...(gender && { gender }),
+  };
+}
+
+let res = submitContact('John', 'Mayer', 'english', 'Male');
+
+console.log(res);
