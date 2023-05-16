@@ -67,3 +67,5 @@ let myData2: unionAB = {
   id: 1,
   propA: 'tesA',
 };
+
+// Implements
