@@ -11,7 +11,13 @@
 // class -> Object instance
 // Object literal vs Object Instance
 
-class User {
+/******* Abstract *******/
+
+abstract class Root {
+  abstract done: boolean;
+}
+
+class User extends Root {
   id: number;
   firstname: string;
   lastname: string;
@@ -19,6 +25,7 @@ class User {
   private token: string;
   static MAX_FAILED_LOGIN = 2; // Static Member
   private tryLogin = 0;
+  done: boolean;
   // Method
   login(username: string, password: string) {
     this.tryLogin += 1;
@@ -28,11 +35,13 @@ class User {
   }
   register() {}
   constructor(id: number, firstname: string, lastname: string) {
+    super();
     this.id = id;
     this.firstname = firstname;
     this.lastname = lastname;
     this.save = false;
     this.token = '';
+    this.done = false;
   }
 }
 User.MAX_FAILED_LOGIN = 3;
@@ -61,5 +70,3 @@ class EnhancementUser extends User {
 
 let myNewUser = new EnhancementUser(2, 'Ricky', 'AT', 'Depok');
 console.log(myNewUser);
-
-/******* Abstract *******/
