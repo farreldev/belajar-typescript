@@ -1,41 +1,72 @@
-let a;
-let b: boolean;
-b = true;
-console.log('type b:', typeof b);
-let c: number;
-c = 1;
-console.log('type c:', typeof c);
-let d: string;
-d = 'hello';
-console.log('type d:', typeof d);
-let e: bigint;
-e = 100n;
-console.log('type e:', typeof e);
-let f: symbol;
-f = Symbol('Sym');
-console.log('type f:', typeof f);
-let g: () => void;
-g = function () {
-  return null;
-};
-console.log('type g:', typeof g);
-let h: null;
-h = null;
-console.log('type h:', typeof h);
-let i: Record<string, unknown>;
-i = {};
-console.log('type i:', typeof i);
-let j: [];
-j = [];
-console.log('type j:', typeof j);
+/******* Basic Classes *******/
 
-class Product {}
+/**
+ * Object User :
+ * - User have personal info such as id, firstname, lastname
+ * - User have method such as login(), register()
+ * - Max Failed Login = 5
+ */
 
-let k = new Product();
-console.log('type k:', typeof k);
+// class -> OOP (Object Oriented Programmi \
+// class -> Object instance
+// Object literal vs Object Instance
 
-let l: any;
-console.log('type l:', typeof l);
-l = 123;
-l = 'hai';
-l = [];
+/******* Abstract *******/
+
+abstract class Root {
+  abstract done: boolean;
+}
+
+class User extends Root {
+  id: number;
+  firstname: string;
+  lastname: string;
+  protected save: boolean;
+  private token: string;
+  static MAX_FAILED_LOGIN = 2; // Static Member
+  private tryLogin = 0;
+  done: boolean;
+  // Method
+  login(username: string, password: string) {
+    this.tryLogin += 1;
+    if (username == 'admin' && password == 'admin') return 'Login Berhasil';
+    if (this.tryLogin >= User.MAX_FAILED_LOGIN) return 'Max login attempt';
+    return 'Login gagal';
+  }
+  register() {}
+  constructor(id: number, firstname: string, lastname: string) {
+    super();
+    this.id = id;
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.save = false;
+    this.token = '';
+    this.done = false;
+  }
+}
+User.MAX_FAILED_LOGIN = 3;
+let myUser = new User(1, 'john', 'dodo');
+
+console.log(myUser.login('', ''));
+console.log(myUser.login('', ''));
+console.log(myUser.login('admin', 'admin'));
+
+/******* Access Modifiers (public, protected, private) *******/
+
+// Subclass
+class EnhancementUser extends User {
+  location: string;
+  constructor(
+    id: number,
+    firstname: string,
+    lastname: string,
+    location: string
+  ) {
+    super(id, firstname, lastname);
+    this.location = location;
+    this.save;
+  }
+}
+
+let myNewUser = new EnhancementUser(2, 'Ricky', 'AT', 'Depok');
+console.log(myNewUser);
