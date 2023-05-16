@@ -53,3 +53,10 @@ function submitContact(
 let res = submitContact('John', 'Mayer', 'english', 'Male');
 
 console.log(res);
+
+/************ Rest Parameter ************/
+function fruitsCollection(item: string, ...restItems: string[]) {
+  return `first item is '${item}' and the other '${restItems.join(' ')}'`;
+}
+let fruits = fruitsCollection('Apple', 'Banana', 'Manggo');
+console.log(fruits);
