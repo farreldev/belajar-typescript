@@ -76,6 +76,7 @@ function CT_generic<T>(param: T): T {
 }
 
 // Aplikasi atau cara panggil generic
+// Mendefinisikan type data saat panggil function
 let tes = CT_generic<string>('Hello Typescript');
 let tes2 = CT_generic<number>(123);
 console.log(tes, tes2)
