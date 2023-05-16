@@ -27,4 +27,22 @@ class User {
 }
 let myUser = new User(1, 'john', 'dodo');
 
-console.log(myUser)
+console.log(myUser);
+
+/******* Access Modifiers (public, protected, private) *******/
+
+// Subclass
+class EnhancementUser extends User {
+  location: string;
+  constructor(
+    id: number,
+    firstname: string,
+    lastname: string,
+    location: string
+  ) {
+    super(id, firstname, lastname);
+    this.location = location;
+  }
+}
+
+let myNewUser = new EnhancementUser(2, 'Ricky', 'AT', 'Depok');
