@@ -68,3 +68,13 @@ console.log(fruits);
 function CT(param: string | number): string | number {
   return param;
 }
+
+// Solution 2: Generic
+// Type Variabel -> deteksi type data caller
+function CT_generic<T>(param: T): T {
+  return param
+}
+
+// Aplikasi atau cara panggil generic
+let tes = CT_generic<string>('Hello Typescript');
+console.log(tes)
