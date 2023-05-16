@@ -60,3 +60,11 @@ function fruitsCollection(item: string, ...restItems: string[]) {
 }
 let fruits = fruitsCollection('Apple', 'Banana', 'Manggo');
 console.log(fruits);
+
+/************ Conditional With Union ************/
+
+// Solution 1: Union
+
+function CT(param: string | number): string | number {
+  return param;
+}
