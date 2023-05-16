@@ -77,4 +77,5 @@ function CT_generic<T>(param: T): T {
 
 // Aplikasi atau cara panggil generic
 let tes = CT_generic<string>('Hello Typescript');
-console.log(tes)
+let tes2 = CT_generic<number>(123);
+console.log(tes, tes2)
