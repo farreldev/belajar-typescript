@@ -27,12 +27,43 @@ let mySongList: Song = {
 console.log(mySongList);
 
 // type if define with same name it will error
-type Song2 = {
-  songName: string; // Error
-};
+/*
+    type Song2 = {
+      songName: string; // Error
+    };
 
-type Song2 = {
-  artisName: string; // Error
-};
+    type Song2 = {
+      artisName: string; // Error
+    };
+*/
 
 // Type Intersection & Union
+
+type typeA = {
+  id: number;
+  propA: string;
+};
+
+type typeB = {
+  id: number;
+  propB: string;
+};
+
+// Intersection
+type intersectionAB = typeA & typeB;
+
+// Union
+type unionAB = typeA | typeB;
+
+// Implementasi
+// Intersection must be include all properties in type
+let myData: intersectionAB = {
+  id: 1,
+  propA: 'tesA',
+  propB: 'tesB',
+};
+// Union not to all include properties in type
+let myData2: unionAB = {
+  id: 1,
+  propA: 'tesA',
+};
