@@ -69,3 +69,21 @@ let myData2: unionAB = {
 };
 
 // Implements
+
+// Implements can use interface or type
+interface Person {
+  name: string;
+  age: number;
+  getName(id: number): string;
+}
+class People implements Person {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  getName(id: number) {
+    return 'yess';
+  }
+}
