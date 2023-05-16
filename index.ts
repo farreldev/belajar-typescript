@@ -79,3 +79,19 @@ function CT_generic<T>(param: T): T {
 let tes = CT_generic<string>('Hello Typescript');
 let tes2 = CT_generic<number>(123);
 console.log(tes, tes2)
+
+// Solution 3: Overloading
+
+// deklarasi
+function CT_Overload(param: string): string;
+function CT_Overload(param: number): number;
+function CT_Overload(param: boolean): boolean;
+
+// Implementasinya
+function CT_Overload(param: any): any {
+  return param
+}
+
+CT_Overload('Hello');
+CT_Overload(123);
+CT_Overload(true);
