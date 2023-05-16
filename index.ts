@@ -64,7 +64,7 @@ console.log(fruits);
 /************ Conditional With Union ************/
 
 // Solution 1: Union
-
+// Mendefinisikan type data dari function
 function CT(param: string | number): string | number {
   return param;
 }
