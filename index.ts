@@ -25,3 +25,12 @@ let mySongList: Song = {
 };
 
 console.log(mySongList);
+
+// type if define with same name it will error
+type Song2 = {
+  songName: string;
+};
+
+type Song2 = {
+  artisName: string;
+};
