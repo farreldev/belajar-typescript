@@ -17,8 +17,15 @@ class User {
   lastname: string;
   protected save: boolean;
   private token: string;
+  static MAX_FAILED_LOGIN = 2;
+  private tryLogin = 0;
   // Method
-  login() {}
+  login(username: string, password: string) {
+    this.tryLogin += 1;
+    if (username == 'admin' && password == 'admin') return 'Login Berhasil';
+    if (this.tryLogin >= User.MAX_FAILED_LOGIN) return 'max login attempt';
+    return 'Login gagal';
+  }
   register() {}
   constructor(id: number, firstname: string, lastname: string) {
     this.id = id;
@@ -28,9 +35,12 @@ class User {
     this.token = '';
   }
 }
+User.MAX_FAILED_LOGIN = 3;
 let myUser = new User(1, 'john', 'dodo');
 
-console.log(myUser);
+console.log(myUser.login('', ''));
+console.log(myUser.login('', ''));
+console.log(myUser.login('admin', 'admin'));
 
 /******* Access Modifiers (public, protected, private) *******/
 
@@ -51,3 +61,5 @@ class EnhancementUser extends User {
 
 let myNewUser = new EnhancementUser(2, 'Ricky', 'AT', 'Depok');
 console.log(myNewUser);
+
+/******* Static Member *******/
