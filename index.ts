@@ -28,9 +28,9 @@ console.log(mySongList);
 
 // type if define with same name it will error
 type Song2 = {
-  songName: string;
+  songName: string; // Error
 };
 
 type Song2 = {
-  artisName: string;
+  artisName: string; // Error
 };
