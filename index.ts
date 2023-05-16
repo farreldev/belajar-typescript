@@ -34,3 +34,5 @@ type Song2 = {
 type Song2 = {
   artisName: string; // Error
 };
+
+// Type Intersection & Union
