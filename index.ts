@@ -16,6 +16,7 @@ class User {
   firstname: string;
   lastname: string;
   protected save: boolean;
+  private token: string;
   // Method
   login() {}
   register() {}
@@ -24,6 +25,7 @@ class User {
     this.firstname = firstname;
     this.lastname = lastname;
     this.save = false;
+    this.token = '';
   }
 }
 let myUser = new User(1, 'john', 'dodo');
@@ -43,7 +45,9 @@ class EnhancementUser extends User {
   ) {
     super(id, firstname, lastname);
     this.location = location;
+    this.save;
   }
 }
 
 let myNewUser = new EnhancementUser(2, 'Ricky', 'AT', 'Depok');
+console.log(myNewUser);
