@@ -15,7 +15,7 @@ class User {
   id: number;
   firstname: string;
   lastname: string;
-
+  protected save: boolean;
   // Method
   login() {}
   register() {}
@@ -23,6 +23,7 @@ class User {
     this.id = id;
     this.firstname = firstname;
     this.lastname = lastname;
+    this.save = false;
   }
 }
 let myUser = new User(1, 'john', 'dodo');
